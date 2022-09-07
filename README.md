@@ -2,6 +2,10 @@
 ## 序言
 这是使用**NodeJS后台**和**mysql数据库**构建的情侣互动小程序，可以跟女朋友互动哦。
 
+## 后台nodejs设计
+
+- node wxapi.js安装缺少的包即可
+
 ## 数据库设计（按顺序导入）
 
 - ![用户数据表](https://leng-mypic.oss-cn-beijing.aliyuncs.com/mac-img/20220907203113.png)
