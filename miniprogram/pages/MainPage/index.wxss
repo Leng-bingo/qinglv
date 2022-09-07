@@ -1,0 +1,53 @@
+.form-cell {
+    padding: 0;
+}
+
+.item-info {
+    width: auto;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column
+}
+
+.item-info_title {
+    font-size: 14px;
+}
+
+.item-info_date {
+    font-size: 10px;
+    color: #BDBDBD;
+}
+
+.slide {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+}
+
+.title {
+    /* position: fixed;
+  left: 100rpx; */
+    font-size: 12px;
+}
+
+.swiper-image {
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background-color: darkgray;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.btn-normal {
+    margin: 2%;
+    color: white;
+    background-color: #3d3d3d;
+}
+
+.btn-hover {
+    color: black;
+    background-color: gray;
+}

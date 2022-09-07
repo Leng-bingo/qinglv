@@ -1,0 +1,194 @@
+<view style="width:100%; background: none;">
+
+    <swiper indicator-dots="true" autoplay="true" interval="2000" duration="500" style="background: white; height: 200px; width: 100%;">
+        <swiper-item>
+            <!-- <image src="https://leng-mypic.oss-cn-beijing.aliyuncs.com/mac-img/ours2.jpg" mode='widthFix' class="swiper-image" /> -->
+            <image wx:if="{{!!userInfo.shouyeUrl ==true}}" src="{{userInfo.shouyeUrl}}" mode='widthFix' class="swiper-image" />
+            <image wx:if="{{!!userInfo.shouyeUrl ==false}}" src="https://leng-mypic.oss-cn-beijing.aliyuncs.com/mac-img/beijing.jpeg" class="swiper-image" />
+        </swiper-item>
+        <!-- <swiper-item><image src="Images/HomeCover02.jpg" mode='widthFix' class="swiper-image" /></swiper-item>
+      <swiper-item><image src="Images/HomeCover03.jpg" mode='widthFix' class="swiper-image" /></swiper-item> -->
+    </swiper>
+
+    <view class="form-group_label">📅 日程提醒</view>
+    <view wx:if="{{richeng.length == 0}}" class="form-group" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);">
+        <view class="form-cell" wx:key="index">
+            <view class="slide" bindtap="toRicheng">
+                <view class="title">
+                    点击添加纪念日以及日程
+                </view>
+                <view class="title" style="margin-left: auto;">
+                    <span style="margin-left: auto;font-weight: bold;color: rgb(218, 102, 121);">
+                    </span>
+                    >
+                </view>
+            </view>
+
+        </view>
+    </view>
+
+    <view wx:if="{{richeng.length > 0}}" class="form-group" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);">
+        <view class="form-cell" wx:for="{{richeng}}" wx:key="index">
+
+            <view class="slide" bindtap="toRicheng">
+                <view class="title">
+                    {{item.title}}
+                </view>
+                <view wx:if="{{item.do=='0'}}" class="title" style="margin-left: auto;">
+                    <span style="margin-left: auto;">
+                        <span style="font-size: 12px; color: gray;">
+                          距离{{item.date}}
+                        </span>
+                        <span wx:if="{{item.chazhi > 0}}">
+                            剩余<span style="font-weight: bold;color: #cb6d7a;">{{item.chazhi}}</span> 天
+                        </span>
+                        <span wx:if="{{item.chazhi <= 0}}">
+                            已经到啦～
+                        </span>
+                         
+                    </span>
+                    >
+                </view>
+
+                <view wx:if="{{item.do=='1'}}" class="title" style="margin-left: auto;">
+                    <span style="margin-left: auto;">
+                        <span wx:if="{{item.chazhi > 0}}">
+                            已经 <span style="font-weight: bold;color: #cb6d7a;">{{item.chazhi}}</span> 天啦！
+                        </span>
+                        
+                    </span>
+                    >
+                </view>
+            </view>
+
+        </view>
+    </view>
+
+    <view class="form-group_label">🙌 签到</view>
+    <view class="form-group" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);">
+        <view class="form-cell">
+            <view class="slide" wx:if="{{!!userInfo.together == true}}">
+                <view class="title" style="float: left;">今天是{{nowDate}} 我们在一起
+                    <span style="font-weight: bold;color: rgb(218, 102, 121);">{{towDaysBetween}}
+                    </span>天啦！
+                </view>
+                <view id="sign_in_before" class="button title" style="float: right;background-color: {{sign_in_color}};" bindtap="{{button_onclick}}">{{sign_in}}
+                </view>
+            </view>
+
+            <view class="slide" wx:if="{{!!userInfo.together == false}}">
+                <view class="title" style="float: left;">
+                    请先在我的页面设置在一起的时间哟～
+                </view>
+
+            </view>
+        </view>
+    </view>
+
+    <view class="form-group_label">🤙 位置打卡</view>
+
+    <view class="form-group" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);">
+        <view class="form-cell">
+            <view class="slide" bindtap="toDidian">
+                <view class="title" style="display: flex;flex-direction: column;">
+                    <view>
+                        {{locate}}
+                    </view>
+                    <view style="font-size: 10px; color: gray;">
+                        {{street}}
+                    </view>
+
+                </view>
+                <view class="title" style="margin-left: auto;">
+                    <span style="margin-left: auto;">
+                        {{weather}} <span style="font-weight: bold;color: #cb6d7a;">{{temp}}</span> °C
+                    </span>
+                    >
+                </view>
+            </view>
+
+        </view>
+
+        <!-- <view class="form-cell">
+            <view class="slide" bindtap="toRicheng">
+                <view class="title" style="display: flex;flex-direction: column;">
+                    <view>
+                        小冷的最新打卡
+                    </view>
+                    <view style="font-size: 10px; color: gray;">
+                        9月2日发布
+                    </view>
+                </view>
+                <view class="title" style="margin-left: auto;">
+                    <span style="margin-left: auto;">
+                        亲亲
+                    </span>
+                    >
+                </view>
+            </view>
+        </view> -->
+    </view>
+
+    <view class="form-group_label">💰 积分榜</view>
+    <view class="form-group" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);">
+        <view class="form-cell">
+            <view class="slide">
+                <view class="title">{{userInfo.nickName}}：{{userInfo.credit}}</view>
+            </view>
+        </view>
+        <view class="form-cell">
+            <view class="slide">
+                <view class="title">{{coupleInfo.nickName}}：{{coupleInfo.credit}}</view>
+            </view>
+        </view>
+    </view>
+
+    <view class="form-group_label">🔧 常用工具</view>
+    <view class="form-group" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);">
+        <view class="form-cell">
+            <view class="slide" bindtap="toXingcheng">
+                <view class="title">
+                    通信行程卡
+                </view>
+                <view class="title" style="margin-left: auto;">
+
+                    >
+                </view>
+            </view>
+        </view>
+
+        <view class="form-cell">
+            <view class="slide" bindtap="toSuishenma">
+                <view class="title">
+                    随申码
+                </view>
+                <view class="title" style="margin-left: auto;">
+                    >
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="form-group_label">🐻 欢迎回来</view>
+    <view class="form-group" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);">
+        <view class="form-cell">
+            <view class="slide">
+                <view class="title">欢迎！{{userInfo.nickName}}和{{coupleInfo.nickName}}！</view>
+            </view>
+        </view>
+        <view class="form-cell">
+            <view class="slide">
+                <view class="title">每日一句：{{content}}</view>
+            </view>
+        </view>
+    </view>
+
+</view>
+
+<!-- <movable-area style="pointer-events: none; position: fixed; width: 100%; height: 100%;">
+    <movable-view style="pointer-events: auto; width: 20%; height: 20%;" x="{{screenWidth}}" y="{{screenHeight}}" direction="all">
+        <button class="btn-normal" hover-class="btn-hover" size="mini" bindtap="toDaka" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+            <image style="margin-top: 10px; height: 100%; width: 100%;" mode="widthFix" src="../Mission/Images/Plus.png" />打卡
+        </button>
+    </movable-view>
+</movable-area> -->

@@ -1,0 +1,76 @@
+.form-cell {
+    padding: 0;
+  }
+  
+  .slide {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+  }
+  
+  .title {
+    /* position: fixed;
+    left: 100rpx; */
+    font-size: 13px;
+  }
+  
+  .swiper-image{
+    display: block;
+    height: 100%; 
+    width: 100%;
+    position: relative;
+    background-color: darkgray;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .recovery_other_line {
+    display: flex;
+    line-height: 124rpx;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .recovery_other_line .upload_img {
+    width: 36rpx;
+    height: 36rpx;
+  }
+  .recovery_other_line .other_text {
+    width: 150rpx;
+    font-size: 28rpx;
+    color: #000;
+  }
+  .choose_upload_view {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .choose_upload_item {
+    margin-left: 38rpx;
+    position: relative;
+    width: 100rpx;
+    display: flex;
+    align-items: center;
+  }
+  .choose_upload_view .choose_upload_img {
+    width: 100rpx;
+    height: 100rpx;
+  }
+  .choose_upload_view .remove_img_icon {
+    padding: 4rpx;
+    position:absolute;
+    top: -15rpx;
+    right: -13rpx;
+    width: 28rpx;
+    height: 28rpx;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .5);
+  }
+  .other_upload {
+    margin-left: 15rpx;
+    width: 80rpx;
+  }
+  
+  

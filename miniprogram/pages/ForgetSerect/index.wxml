@@ -1,0 +1,51 @@
+<view class="top-box">
+  <view>Hi</view>
+  <view class="next-text">欢迎使用！</view>
+</view>
+<!-- 登录、注册 -->
+<view class="center-box">
+  <view class="nav">
+    <view class="right {{current==0?'select':''}}">
+      <text>忘记密码</text>
+    </view>
+  </view>
+
+  <!-- 忘记秘密 -->
+  <view class="input-box" hidden="{{current==0}}">
+    <view class="wei-input">
+      <icon type="waiting" color="#44ADFB" size="16"></icon>
+      <input class="input" bindinput="inputPhoneNumber" auto-focus placeholder="请输入手机号"/>
+    </view>
+    <view class="wei-input">
+      <icon type="waiting" color="#44ADFB" size="16"></icon>
+      <input class="input" bindinput="inputEmail" auto-focus placeholder="请输入邮箱号"/>
+    </view>
+    <view class="wei-input">
+      <icon type="waiting" color="#44ADFB" size="16"></icon>
+      <input class="input" bindinput="inputCode" auto-focus placeholder="请输入6位邮箱验证码"/>
+      <text class="input-code" bindtap="getCode">{{codeText}}</text>
+    </view>
+    <view class="wei-input">
+      <icon type="success" color="#44ADFB" size="16"></icon>
+      <input class="input" bindinput="inputSerect" auto-focus placeholder="请输入密码"/>
+    </view>
+    <view class="wei-input">
+      <icon type="success" color="#44ADFB" size="16"></icon>
+      <input class="input" bindinput="inputSerect2" auto-focus placeholder="请确认密码"/>
+    </view>
+  </view>
+  <view class="sumbit-btn">
+    <button class="button" 
+    style="background-color: #33ccff;font-size: 30rpx;" 
+    type="primary" bindtap="zhuce" wx:if="{{current==1}}">立即{{'修改'}}</button>
+  </view>
+</view>
+
+<!-- 重影 -->
+<view class="shadow shadow-1"></view><view class="shadow shadow-2"></view>
+<!-- 说明 -->
+<view class="bottom-box">
+  ～爱情杂货铺·Leng～
+</view>
+
+

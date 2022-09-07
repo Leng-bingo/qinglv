@@ -1,0 +1,104 @@
+<view style="width:100%; background: none;">
+    <view class='head head-height'>
+        <view class="userinfo">
+            <image class="userinfo-avatar" src="{{userInfo.avatarUrl!=null?userInfo.avatarUrl:'./images/None.png'}}" mode="cover"></image>
+            <!-- 一个人 -->
+            <text wx:if="{{coupleInfo.length==0 && userInfo.length!=0}}" class="userinfo-nickname">{{userInfo.nickName}}</text>
+            <!-- 两个人 -->
+            <text wx:if="{{coupleInfo.length!=0 && userInfo.length!=0}}" class="userinfo-nickname2">{{userInfo.nickName}}❤️{{coupleInfo.nickName}}</text>
+            <image wx:if="{{coupleInfo.length!=0 && userInfo.length!=0}}" class="userinfo-avatar2" src="{{coupleInfo.avatarUrl != null? coupleInfo.avatarUrl:'./images/None.png'}}" mode="cover"></image>
+        </view>
+    </view>
+
+
+
+    <!-- <view class="form-group_label">🔧 常用工具</view> -->
+    <view class="form-group" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);border-radius: 0;background: none">
+
+        <view class="form-cell">
+            <view class="slide">
+                <view class="title" bindtap="toDetailPageLower">
+                    {{userInfo.nickName}}💰
+                </view>
+                <view style="margin-left: auto;color: #ABA57C;">{{userInfo.credit==null?0:userInfo.credit}}</view>
+            </view>
+        </view>
+
+        <view wx:if="{{coupleInfo.length!=0 && userInfo.length!=0}}" class="form-cell" style="margin: 0;">
+            <view class="slide">
+                <view class="title" bindtap="toDetailPageLower">
+                    {{coupleInfo.nickName}}💰
+                </view>
+                <view style="margin-left: auto;color: #F4D8E2;">{{coupleInfo.credit==null?0:coupleInfo.credit}}</view>
+            </view>
+        </view>
+
+        <view class="form-cell">
+            <view class="slide" bindtap="toChangeUserInfo">
+                <view class="title">
+                    更改用户信息
+                </view>
+                <view style="margin-left: auto;">></view>
+            </view>
+        </view>
+
+        <!-- <view class="form-cell">
+            <view class="slide">
+                <view class="title" bindtap="toDetailPageLower">
+                    设置
+                </view>
+                <view style="margin-left: auto;">></view>
+            </view>
+        </view> -->
+
+        <!-- <view class="form-cell">
+            <view class="slide">
+                <view class="title" bindtap="toDetailPageLower">
+                    历史记录
+                </view>
+                <view style="margin-left: auto;">></view>
+            </view>
+        </view> -->
+
+        <view class="form-cell">
+            <view class="slide" bindtap="bindCouple">
+                <view class="title">
+                    绑定伴侣
+                </view>
+                <view style="margin-left: auto;">></view>
+            </view>
+        </view>
+
+        <view class="form-cell">
+            <view class="slide" bindtap="toClearStorage">
+                <view class="title">
+                    清除缓存
+                </view>
+                <view style="margin-left: auto;">></view>
+            </view>
+        </view>
+
+        <view class="form-cell">
+            <view class="slide">
+                <view class="title">
+                    我的ID:{{userOpenID}}
+                </view>
+                <view style="margin-left: auto;">></view>
+            </view>
+        </view>
+
+        <view class="form-cell">
+            <view class="slide" bindtap="toFankui">
+                <view class="title">
+                    意见反馈
+                </view>
+                <view style="margin-left: auto;">></view>
+            </view>
+        </view>
+
+
+    </view>
+
+
+</view>
+

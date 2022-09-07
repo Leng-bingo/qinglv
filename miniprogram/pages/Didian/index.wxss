@@ -1,0 +1,18 @@
+/* pages/Didian/index.wxss */
+
+.form-cell {
+    padding: 0;
+}
+
+.slide {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+}
+
+.title {
+    /* position: fixed;
+  left: 100rpx; */
+    font-size: 12px;
+}

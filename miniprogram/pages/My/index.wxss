@@ -1,0 +1,126 @@
+.head-height {
+    height: 120px;
+}
+
+.head {
+    display: flex;
+    width: 100%;
+    background-color: #F19EAB;
+    align-items: center;
+    /* position: fixed; */
+}
+
+.form-cell {
+    padding: 0;
+    height: 45px;
+    margin: 10px 0 0 0;
+}
+
+.slide {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+    background: white;
+}
+
+.item-info {
+    width: auto;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column
+  }
+  .item-info_title {
+    font-size: 18px;
+  }
+  .item-info_date {
+    font-size: 10px;
+    color: #BDBDBD;
+  }
+
+.title {
+    /* position: fixed;
+    left: 100rpx; */
+    font-size: 13px;
+}
+
+.userinfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    /* position: fixed; */
+}
+
+.userinfo-avatar {
+    width: 150rpx;
+    height: 150rpx;
+    margin: 30rpx;
+    border-radius: 50%;
+}
+
+.userinfo-avatar2 {
+    width: 150rpx;
+    height: 150rpx;
+    margin: 30rpx;
+    border-radius: 50%;
+}
+
+.userinfo-nickname2 {
+    color: #333333;
+    text-align: center;
+    font-size: 28rpx;
+    flex: 1;
+}
+
+.userinfo-nickname {
+    color: #333333;
+    font-size: 35rpx;
+}
+
+.list-wrapper {
+    width: 100%;
+}
+
+/* 横着的分割View样式 */
+/*分割线样式*/
+.div-line {
+    background: #E0E3DA;
+    width: 100%;
+    height: 3rpx;
+}
+
+.list-item {
+    width: 100%;
+    height: 120rpx;
+}
+
+.list-item_active {
+    background-color: #E0E3DA;
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 120rpx;
+}
+
+.item-text {
+    position: fixed;
+    left: 100rpx;
+    font-size: 38rpx;
+}
+
+.item-array {
+    position: fixed;
+    right: 50rpx;
+    font-size: 38rpx;
+}
+
+.item-image {
+    position: fixed;
+    left: 50rpx;
+    width: 40rpx;
+    height: 40rpx;
+}

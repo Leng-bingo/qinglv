@@ -1,0 +1,74 @@
+<view class="top-box">
+  <view>Hi</view>
+  <view class="next-text">欢迎使用！</view>
+</view>
+<!-- 登录、注册 -->
+<view class="center-box">
+  <view class="nav">
+    <view class="left {{current==1?'select':''}}" bindtap="click" data-code="1">
+      <text>登录</text>
+    </view>
+    <view class="right {{current==0?'select':''}}" bindtap="click" data-code="0">
+      <text>注册</text>
+    </view>
+    <view  wx:if="{{forget==true}}"  class="right {{forget==true?'select':''}}" bindtap="click_forget">
+      <text>忘记密码</text>
+    </view>
+  </view>
+  <!-- 登录 -->
+  <view class="input-box" hidden="{{current==0}}">
+    <view class="wei-input">
+      <icon type="waiting" color="#44ADFB" size="16"></icon>
+      <input class="input" bindinput="login_user" auto-focus placeholder="请输入邮箱"/>
+    </view>
+    <view class="wei-input">
+      <icon type="success" color="#44ADFB" size="16"></icon>
+      <input class="input" bindinput="login_serect" auto-focus placeholder="请输入登录密码"/>
+    </view>
+    <view class="forget">
+      <text bindtap="click_forget">忘记密码?</text>
+    </view>
+  </view>
+
+  <!-- 注册 -->
+  <view class="input-box" hidden="{{current==1}}">
+    <view class="wei-input">
+      <icon type="waiting" color="#44ADFB" size="16"></icon>
+      <input class="input" bindinput="inputPhoneNumber" auto-focus placeholder="请输入手机号"/>
+    </view>
+    <view class="wei-input">
+      <icon type="waiting" color="#44ADFB" size="16"></icon>
+      <input class="input" bindinput="inputEmail" auto-focus placeholder="请输入邮箱号"/>
+    </view>
+    <view class="wei-input">
+      <icon type="waiting" color="#44ADFB" size="16"></icon>
+      <input class="input" bindinput="inputCode" auto-focus placeholder="请输入6位邮箱验证码"/>
+      <text class="input-code" bindtap="getCode">{{codeText}}</text>
+    </view>
+    <view class="wei-input">
+      <icon type="success" color="#44ADFB" size="16"></icon>
+      <input class="input" bindinput="inputSerect" auto-focus placeholder="请输入密码"/>
+    </view>
+    <view class="wei-input">
+      <icon type="success" color="#44ADFB" size="16"></icon>
+      <input class="input" bindinput="inputSerect2" auto-focus placeholder="请确认密码"/>
+    </view>
+  </view>
+  <view class="sumbit-btn">
+    <button class="button" 
+    style="background-color: #33ccff;font-size: 30rpx;" 
+    type="primary" bindtap="login" wx:if="{{current==1}}">立即{{'登录'}}</button>
+    <button class="button" 
+    style="background-color: #33ccff;font-size: 30rpx;" 
+    type="primary" bindtap="zhuce" wx:if="{{current==0}}">立即{{'注册'}}</button>
+  </view>
+</view>
+
+<!-- 重影 -->
+<view class="shadow shadow-1"></view><view class="shadow shadow-2"></view>
+<!-- 说明 -->
+<view class="bottom-box">
+  ～爱情杂货铺·Leng～
+</view>
+
+

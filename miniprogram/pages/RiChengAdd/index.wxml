@@ -1,0 +1,37 @@
+<wxs module="util" src="../util.wxs" />
+<view class="container white" style="animation-name: animation-blur; animation-duration: 0.5s;">
+    <image src="../../images/Mission.gif" mode='widthFix' />
+    <view class="form-group" style="z-index: 0; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05); ">
+        <!-- <view class="form-cell">
+            <view class="form-cell_title">🔖选择预设</view>
+            <picker mode="selector" bindchange="onPresetChange" value="{{presetIndex}}" range="{{presets}}" range-key="name">{{presets[presetIndex].name}}</picker>
+        </view> -->
+        
+        <view class="form-cell">
+            <view class="form-cell_title">📌 写上是什么事情吧～</view>
+            <input class="form-cell_input" placeholder="是什么重要的事情呢？" placeholder-class="form-cell_placeholder" bindinput="onTitleInput" value="{{title}}" />
+        </view>
+        <view class="form-cell">
+            <view class="form-cell_title">🥳 事件类型</view>
+            <picker mode="selector" bindchange="onDoPeople" value="{{doPeopleIndex}}" range="{{doPeople}}" range-key="name">{{doPeople[doPeopleIndex].name}}</picker>
+        </view>
+        <view class="form-cell">
+            <view class="form-cell_title">📝 事件摘要</view>
+            <textarea class="form-cell_input" placeholder="是要做什么呢?" placeholder-class="form-cell_placeholder" bindinput="onDescInput" value="{{desc}}" />
+        </view>
+        <view class="form-cell">
+            <view class="form-cell_title">🕙 时间</view>
+                <picker mode="date" value="{{date}}" start="1900-09-01" end="2100-09-01" bindchange="bindDateChange">
+                    <view class="picker">
+                        点击选择时间: {{date}}
+                    </view>
+                </picker>
+        </view>
+    </view>
+
+    <view class="footer">
+        <view class="reset" bindtap="resetMission">重置</view>
+        <!-- <view class="save" bindtap="saveMission">保存</view> -->
+        <view class="save" bindtap="node_saveMission">保存</view>
+    </view>
+</view>

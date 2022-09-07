@@ -1,0 +1,115 @@
+/* pages/weCoperStudy/weCoperStudy.wxss */
+page{
+    width: 100%;
+    height: 100%;
+  }
+   
+   
+  .titleBar{
+    width: 100vw;
+    height: 128rpx;
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index:100;
+    text-align: center;
+    line-height: 158rpx;
+    font-size: 36rpx;
+    color:#fff;
+    background: linear-gradient(to right,  #cff79c 0%,#06d806 100%);
+  }
+   
+  .imgDisposeBlock{
+    position: absolute;
+    z-index: 99;
+    left:0;
+    top:0;
+    width:100vw;
+    height:100vh;
+    background: rgb(0, 0, 0);
+    overflow: hidden;
+  }
+   
+  .imgDisposeArea{
+    width:100vw;
+    height:90vh;
+    overflow: hidden;
+    background: #FFF;
+  }
+   
+  .imgDisposeControlLine{
+    width: 100vw;
+    height:10vh;
+    position: relative;
+    background: #fff;
+  }
+   
+  .editBtn{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    width:260rpx;
+    height: 60rpx;
+    background: #3a8d5f;
+    font-size: 30rpx;
+    text-align: center;
+    line-height: 60rpx;
+    color:#fff;
+  }
+   
+  .editBtn.reelectBtn{
+    left:10%;
+  }
+   
+   
+  .editBtn.editPerfectBtn{
+    right:10%;
+  }
+   
+  .finalCanvasClass{
+    position:absolute;
+    top:-600%;
+    left:0;
+    z-index:15;
+    transform-origin: left top;
+    transform: scale(0.25);
+  }
+   
+  .letterCanvasClass{
+    position:absolute;
+    top:-9999rpx;
+    left:0;
+    transform-origin: left top;
+    transform: scale(0.25);
+    z-index: -1;
+  }
+   
+  .letterSrcClass{
+    position:absolute;
+    z-index:1;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+   
+  }
+   
+   
+  /* 截图canvas放大 真机上不行*/
+  /* .cropper{
+    transform-origin: left top;
+    transform: scale(0.25);
+  } */
+   
+  .shadowBlock{
+    width:100%;
+    height:100%;
+    background:#f7f7f7;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 99;
+  }
+  
+  
+  

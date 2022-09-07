@@ -1,0 +1,161 @@
+<!--pages/Didian/index.wxml-->
+<view class="form-group_label">🤙 分享位置</view>
+<view style="display: flex;">
+  <view class="form-group" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);">
+    <view class="form-cell">
+      <view class="slide" bindtap="toRicheng">
+        <view class="title" style="display: flex;flex-direction: column;">
+          <view>
+            {{fullAddress.city}}
+          </view>
+          <view style="font-size: 10px; color: gray;">
+            {{fullAddress.province}}
+          </view>
+
+        </view>
+        <view class="title" style="margin-left: auto;">
+          📍
+        </view>
+      </view>
+
+    </view>
+
+    <view class="form-cell">
+      <view class="slide" bindtap="toRicheng">
+        <view class="title" style="display: flex;flex-direction: column;">
+          <view>
+            {{stre}}
+          </view>
+          <view style="font-size: 10px; color: gray;">
+            {{fullAddress.district}}
+          </view>
+
+        </view>
+      </view>
+
+    </view>
+
+    <view class="form-cell">
+      <view class="slide" bindtap="toRicheng">
+        <view class="title" style="display: flex;flex-direction: column;">
+          <view>
+            东经
+          </view>
+          <view style="font-size: 10px; color: gray;">
+            {{lng}}
+          </view>
+
+        </view>
+      </view>
+
+    </view>
+
+    <view class="form-cell">
+      <view class="slide" bindtap="toRicheng">
+        <view class="title" style="display: flex;flex-direction: column;">
+          <view>
+            北纬
+          </view>
+          <view style="font-size: 10px; color: gray;">
+            {{lat}}
+          </view>
+
+        </view>
+
+      </view>
+
+    </view>
+
+  </view>
+
+  <view class="form-group" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);">
+    <view class="form-cell">
+      <view class="slide" bindtap="toRicheng">
+        <view class="title" style="display: flex;flex-direction: column;">
+          <view>
+            {{!!couple_fullAddress.city==true?couple_fullAddress.city:'未获取到'}}
+          </view>
+          <view style="font-size: 10px; color: gray;">
+            {{!!couple_fullAddress.province==true?couple_fullAddress.province:'未获取到'}}
+          </view>
+
+        </view>
+        <view class="title" style="margin-left: auto;">
+          📍
+        </view>
+      </view>
+
+    </view>
+
+    <view class="form-cell">
+      <view class="slide" bindtap="toRicheng">
+        <view class="title" style="display: flex;flex-direction: column;">
+          <view>
+            {{!!couple_stre==true?couple_stre:'未获取到'}}
+          </view>
+          <view style="font-size: 10px; color: gray;">
+            {{!!couple_fullAddress.district==true?couple_fullAddress.district:'未获取到'}}
+          </view>
+
+        </view>
+      </view>
+
+    </view>
+
+    <view class="form-cell">
+      <view class="slide" bindtap="toRicheng">
+        <view class="title" style="display: flex;flex-direction: column;">
+          <view>
+            东经
+          </view>
+          <view style="font-size: 10px; color: gray;">
+            {{!!couple_lng==true?couple_lng:'未获取到'}}
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="form-cell">
+      <view class="slide" bindtap="toRicheng">
+        <view class="title" style="display: flex;flex-direction: column;">
+          <view>
+            北纬
+          </view>
+          <view style="font-size: 10px; color: gray;">
+            {{!!couple_lat==true?couple_lat:'未获取到'}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="form-group_label">🌉 我们的距离</view>
+<view class="form-group" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);">
+  <view class="form-cell">
+    <view class="slide" bindtap="toDidian">
+      <view class="title" style="display: flex;flex-direction: column;">
+        <view>
+          我们之间相距
+        </view>
+        <view style="font-size: 10px; color: gray;">
+          所爱隔山海，山海皆可平
+        </view>
+
+      </view>
+      <view class="title" style="margin-left: auto;">
+        <span style="margin-left: auto;">
+          <span style="font-weight: bold;color: #cb6d7a;">{{!!our_dis==true?our_dis:'暂无'}}</span> 千米
+        </span>
+
+      </view>
+    </view>
+
+  </view>
+</view>
+
+<view class="form-group" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);">
+  <map class='map' id='myMap' longitude="{{longitude}}" latitude="{{latitude}}" scale="{{scale}}" show-location="true" markers="{{markers}}" controls='{{controls}}' style="width:100%;height:250px">
+</map>
+</view>
+

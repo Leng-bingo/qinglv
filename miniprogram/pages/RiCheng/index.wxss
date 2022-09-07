@@ -1,0 +1,83 @@
+/* pages/RiCheng/index.wxss */
+.markBtn .weui-slideview__btn {background-color: greenyellow;}
+.starBtn .weui-slideview__btn {background-color: gold;}
+.removeBtn .weui-slideview__btn {background-color: lightsalmon;}
+.form-cell {
+    padding: 0;
+}
+
+.slide {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px 10px 10px;
+    position: relative;
+}
+
+.up {
+    padding: 5px 0px 0px 0px;
+    align-items: center;
+    text-align: center;
+    font-size: 15px;
+    color: rgb(228, 132, 15);
+}
+
+.three_item {
+    width: 100%;
+    /* margin-left: 10px; */
+    margin: 0 20px 0 20px;
+    border-top: 1px solid #f2f2f2;
+    display: flex;
+    flex-direction: column
+}
+
+.item_left {
+    margin-left: 5px;
+}
+
+.item_right {
+    margin-left: auto;
+    font-size: 14px;
+    color: gray;
+    align-items: center;
+}
+.title {
+    margin-top: 20px;
+    font-size: 17px;
+    font-weight: bold;
+  }
+
+  .subtitle {
+    margin-top: 9px;
+    font-size: 12px;
+  }
+
+.item_title {
+    font-size: 14px;
+    text-align: left;
+}
+
+.item_desc {
+    font-size: 10px;
+    text-align: left;
+    color: gray;
+}
+
+
+.item_two {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+
+
+.btn-normal {
+    margin: 2%;
+    color: white;
+    background-color: #3d3d3d;
+}
+
+.btn-hover {
+    color: black;
+    background-color: gray;
+}

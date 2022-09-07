@@ -1,0 +1,85 @@
+<!--pages/RiCheng/index.wxml-->
+<wxs module="util" src="../util.wxs" />
+
+<view class="container white" wx:if="{{richeng.length === 0}}">
+    <image class="background" src="../Mission/Images/None.png" mode="aspectFit" />
+    <view class="title">暂无日程</view>
+    <view class="subtitle">赶快去添加吧，好像什么也没有...</view>
+</view>
+
+<view style="width:100%; background: none;">
+    <view wx:if="{{richeng.length > 0}}">
+        <view class="form-group_label">📅 看看有多久啦~
+            <mp-badge content="{{memmoryMissions.length}}" style="margin-left: 5px;" />
+        </view>
+
+        <view class="form-group" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);" wx:for="{{memmoryMissions}}" wx:key="index">
+            <mp-slideview buttons="{{slideButtons}}" data-index='{{index}}' icon="{{true}}" bindbuttontap="slideButtonTaptop">
+                <view class="form-cell" data-index="{{index}}">
+                    <view class="up">
+                        {{item.date}}
+                    </view>
+                    <view class="slide" bindtap="toRicheng">
+                        <view class="three_item">
+                            <view class="item_two">
+                                <view class="item_left">
+                                    <view class="item_title">
+                                        {{item.title}}
+                                    </view>
+                                    <view class="item_desc">
+                                        {{!!item.descc == true ? item.descc : ' '}}
+                                    </view>
+                                </view>
+                                <view class="item_right">
+                                    已经 <span style="color: #cb6d7a;">{{item.chazhi}}</span> 天啦！
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </mp-slideview>
+        </view>
+
+        <view class="form-group_label">😄 美好的事情即将发生
+            <mp-badge content="{{futureMissions.length}}" style="margin-left: 5px;" />
+        </view>
+        <view class="form-group" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);" wx:for="{{futureMissions}}" wx:key="index">
+            <mp-slideview buttons="{{slideButtons}}" data-index='{{index}}' icon="{{true}}" bindbuttontap="slideButtonTapDown">
+                <view class="form-cell">
+                    <view class="up">
+                        {{item.date}}
+                    </view>
+                    <view class="slide" bindtap="toRicheng">
+                        <view class="three_item">
+                            <view class="item_two">
+                                <view class="item_left">
+                                    <view class="item_title">
+                                        {{item.title}}
+                                    </view>
+                                    <view class="item_desc">
+                                        {{!!item.descc == true ? item.descc : ' '}}
+                                    </view>
+                                </view>
+                                <view wx:if="{{item.chazhi <= 0 }}" class="item_right">
+                                    已经到啦！
+                                </view>
+                                <view wx:if="{{item.chazhi > 0 }}" class="item_right">
+                                    还有 <span style="color: #cb6d7a;">{{item.chazhi}}</span> 天啦！
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </mp-slideview>
+        </view>
+    </view>
+
+</view>
+
+<movable-area style="pointer-events: none; position: fixed; width: 100%; height: 100%;">
+    <movable-view style="pointer-events: auto; width: 20%; height: 20%;" x="{{screenWidth}}" y="{{screenHeight}}" direction="all">
+        <button class="btn-normal" hover-class="btn-hover" size="mini" bindtap="toAddRicheng" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+            <image style="margin-top: 10px; height: 100%; width: 100%;" mode="widthFix" src="../Mission/Images/Plus.png" />事件
+        </button>
+    </movable-view>
+</movable-area>

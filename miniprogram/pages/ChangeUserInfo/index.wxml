@@ -1,0 +1,80 @@
+<!--pages/ChangeUserInfo/index.wxml-->
+
+<view>
+    <view class="form-group_label">📷 修改头像及背景图片</view>
+    <view class="form-group" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);">
+        <view class="form-cell">
+            <view class="slide">
+                <view class="title">头像</view>
+                <view style="margin-left: auto;display: flex;">
+                    <!-- 图片预览 -->
+                    <view wx:if="{{touxiang != '' }}" class="choose_upload_view" style="margin-right: 15px;">
+                        <!-- 图片上传展示 -->
+                        <image src="{{touxiang}}" class="choose_upload_img" bindtap="previewBigImage"></image>
+                    </view>
+                    <!-- 上传按钮 -->
+                    <view style="align-self:center">
+                        <image src="../../images/img/icon_upload.png" class="upload_img" style="width: 40rpx;height: 40rpx;" bindtap="chooseImageTap"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+
+        <view class="form-cell">
+            <view class="slide" bindtap="shouyeImageTap">
+                <view class="title">首页背景</view>
+                <view style="margin-left: auto;">></view>
+            </view>
+        </view>
+
+        <view class="form-cell">
+            <view class="slide" bindtap="renwuImageTap">
+                <view class="title">任务背景</view>
+                <view style="margin-left: auto;">></view>
+            </view>
+        </view>
+
+        <view class="form-cell">
+            <view class="slide" bindtap="shangchengImageTap">
+                <view class="title">商城背景</view>
+                <view style="margin-left: auto;">></view>
+            </view>
+        </view>
+    </view>
+
+    <view class="form-group_label">🪆 修改个人信息</view>
+    <view class="form-group" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);">
+        <!-- <view class="form-cell">
+            <view class="slide">
+                <view class="title">跳转剪切</view>
+                <view style="margin-left: auto;">></view>
+            </view>
+        </view> -->
+
+        <view class="form-cell">
+            <view class="slide" bindtap="changeNick">
+                <view class="title">修改昵称</view>
+                <view style="margin-left: auto;">></view>
+            </view>
+        </view>
+        <!-- <modal hidden="{{hiddenmodalput}}" title="请输入新昵称" confirm-text="提交" cancel-text="取消" bindcancel="cancelNick" bindconfirm="confirmNick">
+            <input type='text' bindinput="changeNic" placeholder="请输入昵称，最多五个汉字符" auto-focus />
+        </modal> -->
+        <modal wx:if="{{hiddenmodalput==false}}" title="请输入新昵称" confirm-text="提交" cancel-text="取消" bindcancel="cancelNick" bindconfirm="confirmNick">
+            <input type='text' bindinput="changeNic" placeholder="请输入昵称，最多五个汉字符" auto-focus />
+        </modal>
+
+        <view class="form-cell">
+            <view class="slide" bindtap="changeTogether">
+                <view class="title">修改在一起的时间</view>
+                <view style="margin-left: auto;">></view>
+            </view>
+        </view>
+        <!-- <modal hidden="{{hiddenTog}}" title="请输入开始在一起的时间" confirm-text="提交" cancel-text="取消" bindcancel="cancelTog" bindconfirm="confirmTog">
+            <input type='text' bindinput="changeTog" placeholder="请输入时间，格式2022-08-30" auto-focus />
+        </modal> -->
+        <modal wx:if="{{hiddenTog==false}}" title="请输入开始在一起的时间" confirm-text="提交" cancel-text="取消" bindcancel="cancelTog" bindconfirm="confirmTog">
+            <input type='text' bindinput="changeTog" placeholder="请输入时间，格式2022-08-30" auto-focus />
+        </modal>
+    </view>
+</view>

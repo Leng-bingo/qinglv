@@ -1,0 +1,19 @@
+<import src="./cut_photo/we-cropper"/>
+<view class="imgDisposeBlock">
+      <view class='titleBar'>
+        图片上传
+      </view>
+ 
+      <view class='imgDisposeArea'>
+          <template is="we-cropper" data="{{...cropperOpt}}"/>
+      </view>
+ 
+      <view class='imgDisposeControlLine'>
+            <view class='editBtn reelectBtn' bindtap="uploadTap">选择图片</view>
+            <view class='editBtn editPerfectBtn' bindtap="getCropperImage">上传</view>
+      </view>
+ 
+       
+ 
+</view>
+

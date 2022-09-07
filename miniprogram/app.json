@@ -1,0 +1,76 @@
+{
+    "pages": [
+        "pages/MainPage/index",
+        "pages/Mission/index",
+        "pages/MissionAdd/index",
+        "pages/MissionDetail/index",
+        "pages/Market/index",
+        "pages/MarketAdd/index",
+        "pages/MarketDetail/index",
+        "pages/Account/index",
+        "pages/ItemDetail/index",
+        "pages/My/index",
+        "pages/Register/index",
+        "pages/ForgetSerect/index",
+        "pages/BindCouple/index",
+        "pages/ChangeUserInfo/index",
+        "pages/Fankui/index",
+        "pages/RiCheng/index",
+        "pages/RiChengAdd/index",
+        "pages/Didian/index",
+        "pages/Daka/index"
+    ],
+    "permission": {
+        "scope.userLocation": {
+            "desc": "需要地理位置来判断天气"
+        }
+    },
+    "requiredPrivateInfos": [
+        "getLocation"
+    ],
+    "window": {
+        "backgroundColor": "#F6F6F6",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#ff99aa",
+        "navigationBarTitleText": "爱情杂货铺",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "color": "#1a1a1a",
+        "selectedColor": "#ff99aa",
+        "list": [
+            {
+                "pagePath": "pages/MainPage/index",
+                "selectedIconPath": "images/TabBar/HomeIconColor.jpg",
+                "iconPath": "images/TabBar/HomeIconGrey.jpg",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/Mission/index",
+                "selectedIconPath": "images/TabBar/MissionIconColor.jpg",
+                "iconPath": "images/TabBar/MissionIconGrey.jpg",
+                "text": "任务"
+            },
+            {
+                "pagePath": "pages/Market/index",
+                "selectedIconPath": "images/TabBar/MarketIconColor.jpg",
+                "iconPath": "images/TabBar/MarketIconGrey.jpg",
+                "text": "商城"
+            },
+            {
+                "pagePath": "pages/Account/index",
+                "selectedIconPath": "images/TabBar/AccountIconColor.jpg",
+                "iconPath": "images/TabBar/AccountIconGrey.jpg",
+                "text": "仓库"
+            },
+            {
+                "pagePath": "pages/My/index",
+                "selectedIconPath": "images/TabBar/shouyeColor.png",
+                "iconPath": "images/TabBar/shouyeGrey.png",
+                "text": "我的"
+            }
+        ]
+    },
+    "cloud": true,
+    "sitemapLocation": "sitemap.json"
+}

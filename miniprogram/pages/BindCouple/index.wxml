@@ -1,0 +1,34 @@
+<view class="top-box">
+  <view>盆友们！</view>
+  <view class="next-text">欢迎来到爱情杂货铺～</view>
+</view>
+<!-- 登录、注册 -->
+<view class="center-box">
+  <view class="nav">
+    <view class="right {{current==0?'select':''}}">
+      <text>绑定你的小可爱哟～</text>
+    </view>
+  </view>
+
+  <!-- 绑定伴侣 -->
+  <view class="input-box" hidden="{{current==0}}">
+    <view class="wei-input">
+      <icon type="waiting" color="#44ADFB" size="16"></icon>
+      <input class="input" bindinput="inputID" auto-focus placeholder="请输入他/她的ID号"/>
+    </view>
+  </view>
+  <view class="sumbit-btn">
+    <button class="button" 
+    style="background-color: #33ccff;font-size: 30rpx;" 
+    type="primary" bindtap="bind" wx:if="{{current==1}}">立即{{'绑定'}}</button>
+  </view>
+</view>
+
+<!-- 重影 -->
+<view class="shadow shadow-1"></view><view class="shadow shadow-2"></view>
+<!-- 说明 -->
+<view class="bottom-box">
+  ～爱情杂货铺·Leng～
+</view>
+
+
