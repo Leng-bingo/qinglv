@@ -4,7 +4,28 @@
 
 ## 后台nodejs设计
 
-- node wxapi.js安装缺少的包即可
+- node nodejs/wxapi.js安装缺少的包即可
+- 上传图片使用阿里OSS，需要在wxapi.js文件中添加自己的用户信息
+
+```js
+let client = new OSS({ // 链接oss 这里面的配置最好是放在单独的文件，引入如果要上传的git的话账号密码最好不要传到git
+  region: 'oss-cn-hangzhou', // oss地区，只需要把 hangzhou 改为相应地区即可，可以在oss上随便找一个文件链接就知道是哪个地区的了
+  accessKeyId: '', // oss秘钥
+  accessKeySecret: '', // oss秘钥的密码
+  bucket: 'wx-photo', // 存储库名称
+});
+const endPoint = '' // 自己的oss链接名，可以在oss上随便找一个文件链接就知道了
+const bucket = 'wx-photo';
+```
+
+- 添加自己小程序的id和密码
+
+```js
+  var APP_ID = ''  //自己小程序的app id ，在公众开发者后台可以看到
+  var APP_SECRET = ''  //自己小程序的app secrect，在公众开发者后台可以看到
+```
+
+- 数据库mysql改成自己的用户名密码
 
 ## 数据库设计（按顺序导入）
 
