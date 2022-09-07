@@ -34,7 +34,7 @@
 - 更新**任务逻辑**，加入待审核功能，双方审核后任务再被执行，如果不满意任务要求，对方可以删除任务。
 
 ## 效果图
-![](https://leng-mypic.oss-cn-beijing.aliyuncs.com/mac-img/20220907203754.png)
+![](https://leng-mypic.oss-cn-beijing.aliyuncs.com/mac-img/20220907204246.png)
 
 ![](https://leng-mypic.oss-cn-beijing.aliyuncs.com/mac-img/20220907203740.png)
 
